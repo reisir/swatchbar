@@ -1,3 +1,6 @@
+; All of the texts in settings.ini.
+; I hope the section names are descriptive enough.
+
 [TitleBarText]
 Meter=String
 Text=SwatchBar Settings
@@ -5,6 +8,7 @@ MeterStyle=TextStyle
 FontColor=255,255,255
 X=5
 Y=1
+
 [CloseButtonX]
 Meter=String
 Text=X
@@ -12,6 +16,18 @@ MeterStyle=TextStyle
 StringAlign=Center
 X=500
 LeftMouseUpAction=#Close#
+
+[InstructionsButton]
+Meter=String
+Text=?
+MeterStyle=TextStyle
+StringAlign=Center
+X=460
+LeftMouseUpAction=#ShowInstructions#
+
+; AutoFillToggle and AutoTile use an epic hack called
+; a conditional, basically if the meter is not supposed 
+; to be displayed it yeets itself outside of the skin.
 [AutoFillToggle]
 Meter=String
 Text=Fill
@@ -22,6 +38,7 @@ X=(#AutoScale# = 1 ? 440 : 9999)
 W=140
 LeftMouseUpAction=#AutoFillOff#
 SolidColor=#TEXTBACK#
+
 [AutoTile]
 Meter=String
 Text=Tile
@@ -32,6 +49,7 @@ Y=250
 W=140
 LeftMouseUpAction=#AutoFillOn#
 SolidColor=#TEXTBACK#
+
 [WidthBackground]
 Meter=Shape
 Shape=Rectangle 0,0, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
@@ -40,6 +58,7 @@ Shape3=Rectangle 0,100, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
 Shape4=Rectangle 0,150, 300, 40 | Fill Color #SEMIGREEN# | StrokeWidth 0
 X=60
 Y=100
+
 [WidthAdjust]
 Meter=String
 Text=Width
@@ -47,6 +66,7 @@ MeterStyle=TextStyle
 X=(210 - (([WidthAdjust:W] + [WidthPlus:W] + 5 + [WidthMinus:W] + 5) / 2))
 Y=100
 DynamicVariables=1
+
 [WidthPlus]
 Meter=String
 Text=+
@@ -55,6 +75,7 @@ FontColor=#GREEN#
 X=5R
 Y=0r
 LeftMouseUpAction=#WidthPlusFive#
+
 [WidthMinus]
 Meter=String
 Text=-
@@ -64,6 +85,7 @@ Padding=0,2,2,0
 X=5R
 Y=0r
 LeftMouseUpAction=#WidthMinusFive#
+
 [HeightAdjust]
 Meter=String
 Text=Height
@@ -71,6 +93,7 @@ MeterStyle=TextStyle
 X=(210 - (([HeightAdjust:W] + [HeightPlus:W] + 5 + [HeightMinus:W] + 5) / 2))
 Y=150
 DynamicVariables=1
+
 [HeightPlus]
 Meter=String
 Text=+
@@ -79,6 +102,7 @@ FontColor=#GREEN#
 X=5R
 Y=0r
 LeftMouseUpAction=#HeightPlusFive#
+
 [HeightMinus]
 Meter=String
 Text=-
@@ -88,6 +112,7 @@ X=5R
 Y=0r
 Padding=0,2,2,0
 LeftMouseUpAction=#HeightMinusFive#
+
 [Vertical]
 Meter=String
 Text=Orientation: V
@@ -98,6 +123,7 @@ StringAlign=Center
 LeftMouseUpAction=#SetVertical#
 Hidden=#Horizontal#
 SolidColor=#TEXTBACK#
+
 [Horizontal]
 Meter=String
 Text=Orientation: H
@@ -108,6 +134,7 @@ StringAlign=Center
 LeftMouseUpAction=#SetHorizontal#
 Hidden=#Vertical#
 SolidColor=#TEXTBACK#
+
 [OpenSettingsFile]
 Meter=String
 Text=Settings.inc
@@ -117,6 +144,7 @@ Y=250
 StringAlign=Center
 LeftMouseUpAction=#OpenSettings#
 SolidColor=#SEMIGREEN#
+
 [UnLockMeter]
 Meter=String
 MeterStyle=TextStyle
@@ -126,6 +154,7 @@ Text=[\xf023]
 X=17
 Y=55
 Hidden=#Unlock#
+
 [LockMeter]
 Meter=String
 MeterStyle=TextStyle
@@ -135,6 +164,7 @@ Text=[\xf09c]
 X=17
 Y=55
 Hidden=#WidthIsLocked#
+
 [WidthMeasure]
 Measure=String
 String=w#width#
@@ -145,12 +175,14 @@ Measure=String
 String=h#height#
 RegExpSubstitute=1
 Substitute="(.)":'\1#CRLF#'
+
 [Width]
 Meter=String
 MeasureName=WidthMeasure
 MeterStyle=TextStyle
 X=67
 Y=50
+
 [Height]
 Meter=String
 MeasureName=HeightMeasure
@@ -158,6 +190,7 @@ MeterStyle=TextStyle
 StringAlign=Center 
 X=29
 Y=105
+
 [Apply]
 Meter=String
 Text=Apply!
@@ -168,6 +201,7 @@ X=510
 Y=510
 Padding=43,2,5,0
 SolidColor=#GREEN#
+
 [Reset]
 Meter=String
 Text=R

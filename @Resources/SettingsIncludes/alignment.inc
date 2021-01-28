@@ -26,6 +26,10 @@ ImageTint=ffffff
 ImageTint=3a86ff
 [Hover]
 ImageTint=2ec4b6
+[MouseActions]
+MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
+LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 [TopRight]
 Meter=Image
 ImageName=#@#Images\diag.png
@@ -35,9 +39,7 @@ W=40
 H=40
 x=460
 y=110
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=MouseActions
 LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "0" SwatchBar][!Refresh]
 [TopMiddle]
 Meter=Image
@@ -48,9 +50,7 @@ W=40
 H=40
 x=-40r
 y=0r
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=MouseActions
 LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Move "((#SCREENAREAWIDTH# / 2) - (#TotalWidth# / 2))" "0" SwatchBar][!Refresh]
 [TopLeft]
 Meter=Image
@@ -61,9 +61,7 @@ W=40
 H=40
 x=-40r
 y=0r
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=MouseActions
 LeftMouseUpAction=[!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Move "0" "0" SwatchBar][!Refresh]
 [MidLeft]
 Meter=Image
@@ -74,9 +72,7 @@ W=40
 H=40
 x=0r
 y=40r
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=MouseActions
 LeftMouseUpAction=[!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Move "0" "((#SCREENAREAHEIGHT# / 2) - (#TotalHeight# / 2))" SwatchBar][!Refresh]
 [BotLeft]
 Meter=Image
@@ -87,9 +83,7 @@ W=40
 H=40
 x=0r
 y=40r
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=MouseActions
 LeftMouseUpAction=[!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Move "0" "(#SCREENAREAHEIGHT# - #TotalHeight#)" SwatchBar][!Refresh]
 [BotMiddle]
 Meter=Image
@@ -100,9 +94,7 @@ W=40
 H=40
 x=40r
 y=0r
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=MouseActions
 LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Move "((#SCREENAREAWIDTH# / 2) - (#TotalWidth# / 2))" "(#SCREENAREAHEIGHT# - #Height#)" SwatchBar][!Refresh]
 [BotRight]
 Meter=Image
@@ -113,9 +105,7 @@ W=40
 H=40
 x=40r
 y=0r
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=MouseActions
 LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "(#SCREENAREAHEIGHT# - #Height#)" SwatchBar][!Refresh]
 [MidRight]
 Meter=Image
@@ -126,7 +116,5 @@ W=40
 H=40
 x=0r
 y=-40r
-MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint "2ec4b6"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint ""][!UpdateMeter #CURRENTSECTION#][!Redraw]
-LeftMouseDownAction=[!SetOption #CURRENTSECTION# ImageTint "3a86ff"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=MouseActions
 LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "((#SCREENAREAHEIGHT# / 2) - (#TotalHeight# / 2))" SwatchBar][!Refresh]

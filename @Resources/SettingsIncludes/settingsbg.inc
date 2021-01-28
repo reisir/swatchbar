@@ -1,3 +1,9 @@
+; Hardcoded 40x40 swatches for the settings skin title bar
+; Also used for the instruction skin title bar
+
+; These could be generated from the users palette but tbh,
+; I'm way too lazy to handle the exceptions.
+
 [Swatch3]
 Meter=Shape
 Shape=Rectangle 0,0,40,40 | Fill Color E93595 | Strokewidth 0
