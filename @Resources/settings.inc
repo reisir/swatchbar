@@ -1,7 +1,3 @@
-;These are just the size and UI settings etc.
-;Modify the colours by right clicking a swatch to swap
-;or middle click to delete a swatch
-;and click on the + to add a swatch
 [Variables]
 Height=40
 Width=40
@@ -21,6 +17,8 @@ NEUTRAL = ccb1a6
 RED = ea625c
 
 ;System Variables, DON'T TOUCH !!!
+InstructionsDismissed=0
+;Keeps track of if user has seen the instructions
 Unlock=0
 ;This makes the lock work don't touch thanks.
 Horizontal=1

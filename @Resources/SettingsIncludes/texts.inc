@@ -1,18 +1,18 @@
-[Title]
+[TitleBarText]
 Meter=String
 Text=SwatchBar Settings
 MeterStyle=TextStyle
 FontColor=255,255,255
 X=5
 Y=1
-[x]
+[CloseButtonX]
 Meter=String
 Text=X
 MeterStyle=TextStyle
 StringAlign=Center
 X=500
-LeftMouseUpAction=!DeactivateConfig
-[AutoFill]
+LeftMouseUpAction=#Close#
+[AutoFillToggle]
 Meter=String
 Text=Fill
 MeterStyle=TextStyle
@@ -20,7 +20,7 @@ StringAlign=Center
 Y=250
 X=(#AutoScale# = 1 ? 440 : 9999)
 W=140
-LeftMouseUpAction=[!WriteKeyValue Variables AutoScale "0" "#@#settings.inc"]
+LeftMouseUpAction=#AutoFillOff#
 SolidColor=#TEXTBACK#
 [AutoTile]
 Meter=String
@@ -30,14 +30,14 @@ StringAlign=Center
 X=(#AutoScale# = 0 ? 440 : 9999)
 Y=250
 W=140
-LeftMouseUpAction=[!WriteKeyValue Variables AutoScale "1" "#@#settings.inc"]
+LeftMouseUpAction=#AutoFillOn#
 SolidColor=#TEXTBACK#
 [WidthBackground]
 Meter=Shape
 Shape=Rectangle 0,0, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
 Shape2=Rectangle 0,50, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
 Shape3=Rectangle 0,100, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
-Shape4=Rectangle 0,150, 300, 40 | Fill Color #SEMIGREEN## | StrokeWidth 0
+Shape4=Rectangle 0,150, 300, 40 | Fill Color #SEMIGREEN# | StrokeWidth 0
 X=60
 Y=100
 [WidthAdjust]
@@ -54,7 +54,7 @@ MeterStyle=TextStyle
 FontColor=#GREEN#
 X=5R
 Y=0r
-LeftMouseUpAction=[!WriteKeyValue Variables Width "(#Width# + 5)" "#@#settings.inc"][!WriteKeyValue WidthLocker Disabled 0][!Refresh]
+LeftMouseUpAction=#WidthPlusFive#
 [WidthMinus]
 Meter=String
 Text=-
@@ -63,7 +63,7 @@ FontColor=#RED#
 Padding=0,2,2,0
 X=5R
 Y=0r
-LeftMouseUpAction=[!WriteKeyValue Variables Width "(#Width# - 5)" "#@#settings.inc"][!WriteKeyValue WidthLocker Disabled 0][!Refresh]
+LeftMouseUpAction=#WidthMinusFive#
 [HeightAdjust]
 Meter=String
 Text=Height
@@ -78,7 +78,7 @@ MeterStyle=TextStyle
 FontColor=#GREEN#
 X=5R
 Y=0r
-LeftMouseUpAction=[!WriteKeyValue Variables Height "(#Height# + 5)" "#@#settings.inc"][!WriteKeyValue HeightLocker Disabled 0][!Refresh]
+LeftMouseUpAction=#HeightPlusFive#
 [HeightMinus]
 Meter=String
 Text=-
@@ -87,7 +87,7 @@ FontColor=#RED#
 X=5R
 Y=0r
 Padding=0,2,2,0
-LeftMouseUpAction=[!WriteKeyValue Variables Height "(#Height# - 5)" "#@#settings.inc"][!WriteKeyValue HeightLocker Disabled 0][!Refresh]
+LeftMouseUpAction=#HeightMinusFive#
 [Vertical]
 Meter=String
 Text=Orientation: V
@@ -95,7 +95,7 @@ MeterStyle=TextStyle
 X=210
 Y=200
 StringAlign=Center
-LeftMouseUpAction=[!WriteKeyValue Variables Vertical "0" "#@#settings.inc"][!WriteKeyValue Variables Horizontal "1" "#@#settings.inc"][!WriteKeyValue Variables Height #Width# "#@#settings.inc"][!WriteKeyValue Variables Width #Height# "#@#settings.inc"]
+LeftMouseUpAction=#SetVertical#
 Hidden=#Horizontal#
 SolidColor=#TEXTBACK#
 [Horizontal]
@@ -105,7 +105,7 @@ MeterStyle=TextStyle
 X=210
 Y=200
 StringAlign=Center
-LeftMouseUpAction=[!WriteKeyValue Variables Horizontal "0" "#@#settings.inc"][!WriteKeyValue Variables Vertical "1" "#@#settings.inc"][!WriteKeyValue Variables Height #Width# "#@#settings.inc"][!WriteKeyValue Variables Width #Height# "#@#settings.inc"]
+LeftMouseUpAction=#SetHorizontal#
 Hidden=#Vertical#
 SolidColor=#TEXTBACK#
 [OpenSettingsFile]
@@ -115,13 +115,13 @@ MeterStyle=TextStyle
 X=210
 Y=250
 StringAlign=Center
-LeftMouseUpAction=["#@#settings.inc"]
+LeftMouseUpAction=#OpenSettings#
 SolidColor=#SEMIGREEN#
 [UnLockMeter]
 Meter=String
 MeterStyle=TextStyle
 FontFace=FontAwesome
-LeftMouseUpAction=[!WriteKeyValue Variables WidthIsLocked "0" "#@#settings.inc"][!WriteKeyValue Variables Unlock "1" "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#UnlockHeightWidth#
 Text=[\xf023]
 X=17
 Y=55
@@ -130,7 +130,7 @@ Hidden=#Unlock#
 Meter=String
 MeterStyle=TextStyle
 FontFace=FontAwesome
-LeftMouseUpAction=[!WriteKeyValue Variables WidthIsLocked "1" "#@#settings.inc"][!WriteKeyValue Variables Unlock "0" "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#LockHeightWidth#
 Text=[\xf09c]
 X=17
 Y=55
@@ -162,7 +162,7 @@ Y=105
 Meter=String
 Text=Apply!
 MeterStyle=TextStyle
-LeftMouseUpAction=[!Refresh SwatchBar][!Delay 10][!CommandMeasure PSRM Construct SwatchBar]
+LeftMouseUpAction=#Apply#
 StringAlign=Right
 X=510
 Y=510
@@ -175,8 +175,11 @@ MeterStyle=TextStyle
 StringAlign=Left
 X=370
 Y=510
-LeftMouseUpAction=[!WriteKeyValue Variables Vertical "0" "#@#settings.inc"][!WriteKeyValue Variables CurrentTheme "Themes\Custom.inc" "#@#settings.inc"][!WriteKeyValue Variables Horizontal "1" "#@#settings.inc"][!WriteKeyValue Variables Height "40" "#@#settings.inc"][!WriteKeyValue Variables Width "40" "#@#settings.inc"][!WriteKeyValue Variables Unlock "0" "#@#settings.inc"][!WriteKeyValue Variables WidthIsLocked "1" "#@#settings.inc"][!WriteKeyValue Variables AutoScale "0" "#@#settings.inc"]
+LeftMouseUpAction=#Reset#
 SolidColor=#RED#
 Padding=7,2,7,3
 DynamicVariables=1
 H=
+; H= is a functional piece of code.
+; Without it the reset button is too tall. 
+; I don't know why. 
