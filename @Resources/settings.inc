@@ -30,12 +30,12 @@ Refreshed=1
 AlignVer=-1
 AlignHor=0
 ;These two make the alignment system work don't, touch thanks.
-TotalWidth=720
+TotalWidth=360
 TotalHeight=40
 ;More alignment stuff, don't touch thanks.
 AutoScale=0
 ;Fill/Tile mode variable, don't touch thanks.
-CurrentTheme=Themes\Sushi.inc
+CurrentTheme=Themes\Pastels.inc
 ;Theme select variable, don't touch thanks.
 PlusScale=70
 ;The scale of the plus. #PlusScale# out of 100. No need to touch thanks.

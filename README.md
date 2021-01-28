@@ -1,7 +1,7 @@
 # SwatchBar
 SwatchBar Rainmeter skin. Displays colour swatches for easy cross program use.
 
-![Sceleri sketch](./@Resources/Images/sush.png)
+![Sceleri sketch](./@Resources/Images/swatchbar.png)
 
 ## TO-DO
  * [ ] Write a better readme.md
@@ -10,5 +10,6 @@ SwatchBar Rainmeter skin. Displays colour swatches for easy cross program use.
  * [ ] Move settings.ini include files to @Resources
  * [ ] Figure out if distributing Cubano is legal or not, its included in my Adobe subscription. "Includes usage in both personal and commercial projects"
  * [ ] Comment a the code for once
- * [ ] Test if relative addresses work for github readme.md 
+ * [x] Test if relative addresses work for github readme.md 
+	* Hey it works :D
  * [ ] Revise instructions.inc
