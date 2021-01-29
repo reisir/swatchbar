@@ -1,6 +1,4 @@
 [Variables]
-TitleRegExp=.*Adobe.*
-CosmeticName=Adobe
 Exists=0x1
 Visible=0x2
 Enabled=0x4
@@ -42,6 +40,8 @@ DynamicVariables=1
 
 [HideSwatchBar]
 Measure=Calc
+Group=States
+Disabled=1
 Formula=MeasureExists + MeasureVisible
 IfCondition=HideSwatchBar = 2
 IfTrueAction=!ShowFade

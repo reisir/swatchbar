@@ -24,7 +24,7 @@ $RmAPI.Log('Constructing swatches.inc')
 	
 	if ($RmAPI.Variable("Vertical") -eq 0) {
 		if ($RmAPI.Variable("AutoScale") -eq 1) {
-			$Width=($RmAPI.Variable("SCREENAREAWIDTH") / ($Colors.length - 1))
+			$Width=[Math]::Ceiling([decimal]($RmAPI.Variable("SCREENAREAWIDTH") / ($Colors.length - 1)))
 			$TotalWidth=($RmAPI.Variable("SCREENAREAWIDTH"))
 			$PlusX=$Width/2
 			$PlusY="($($Height / 2) - ([Plus:H] / 2))"
@@ -36,7 +36,7 @@ $RmAPI.Log('Constructing swatches.inc')
 		$TotalHeight=$Height
 	} else {
 		if ($RmAPI.Variable("AutoScale") -eq 1) {
-			$Height=($RmAPI.Variable("SCREENAREAHEIGHT") / ($Colors.length - 1))
+			$Height=[Math]::Ceiling([decimal]($RmAPI.Variable("SCREENAREAHEIGHT") / ($Colors.length - 1)))
 			$TotalHeight=($RmAPI.Variable("SCREENAREAHEIGHT"))
 			$PlusX=$Width/2
 			$PlusY="($($Height / 2) - ([Plus:H] / 2))"
@@ -75,8 +75,8 @@ X=$PlusX
 StringAlign=Center
 DynamicVariables=1
 RightMouseUpAction=[!CommandMeasure "PSRM" "Add($Index)"]
-RightMouseDoubleClickAction=[!CommandMeasure "PSRM" "Add(0)"]
-LeftMouseDoubleClickAction=[!ActivateConfig "SwatchBar\Settings"][!SetClip " "]
+MiddleMouseUpAction=[!CommandMeasure "PSRM" "Add(0)"]
+LeftMouseDoubleClickAction=[!ActivateConfig "SwatchBar\Settings" "Settings.ini"][!SetClip " "]
 ToolTipText=Add a swatch from clipboard
 
 "@

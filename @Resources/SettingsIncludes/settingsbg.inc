@@ -7,7 +7,7 @@
 [Swatch3]
 Meter=Shape
 Shape=Rectangle 0,0,40,40 | Fill Color E93595 | Strokewidth 0
-X=0R
+X=0
 [Swatch4]
 Meter=Shape
 Shape=Rectangle 0,0,40,40 | Fill Color 9A18B0 | Strokewidth 0

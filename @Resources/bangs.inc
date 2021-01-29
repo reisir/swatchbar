@@ -1,7 +1,7 @@
 [Variables]
 Close = [!DeactivateConfig]
 OpenSettings = ["#@#settings.inc"]
-ShowInstructions = [!WriteKeyValue "Variables" "InstructionsDismissed" 0 "#@#settings.inc"][!ActivateConfig SwatchBar\settings instructions.ini]
+ShowInstructions = [!WriteKeyValue "Variables" "InstructionsDismissed" 0 "#@#settings.inc"][!ActivateConfig SwatchBar\Settings instructions.ini]
 
 ; Apply refreshes both skins, waits 0 ms and runs the Construct.ps1 script.
 ; It needs to wait 0 ms or Construct.ps1 reads the wrong values from SwatchBar.

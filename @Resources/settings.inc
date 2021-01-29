@@ -1,12 +1,17 @@
 ; Use the settings skin to change settings thanks :)
 [Variables]
+
+; Regular expression used for program detection
+TitleRegExp=.*Adobe.*
+CosmeticName=Adobe
+
 ; SETTINGS UI COLOURS
 BACKGROUND = 4d4d4d
 SLIDERBACK = 79b7e2
+SLIDER = ffd075
 LOCKBACK = ffbc45
 TEXTBACK = ffd075
 FontColor = ffffff
-SLIDER = ffd075
 GREEN = 9ab788
 SEMIGREEN = 64827d
 NEUTRAL = ccb1a6
