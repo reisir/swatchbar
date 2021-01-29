@@ -21,17 +21,16 @@ Changing + and the + backgrounds colour:
 
 # Installation
 
- 1. Prerequisites ([Rainmeter](http://rainmeter.net))
-	 a. [Chocolatey](https://chocolatey.org/)
-		```choco install rainmeter -y```
-	 b. Download installer from [rainmeter.net](http://rainmeter.net) 
- 2. SwatchBar 
-	 a. [Git Bash](https://gitforwindows.org/)
-		```
-		cd $USERPROFILE/Documents/Rainmeter/skins
-		git clone https://github.com/sceleri/swatchbar.git
-		```
-	 b. Wait for a release
+## Chocolatey and Git Bash
+
+	choco install rainmeter -y
+	cd $USERPROFILE/Documents/Rainmeter/skins
+	git clone https://github.com/sceleri/swatchbar.git
+	
+## Manual installation 
+
+* Download installer from [rainmeter.net](http://rainmeter.net) 
+* Wait for a release
 
 # TO-DO
  * [x] Write a better readme.md
@@ -44,7 +43,7 @@ Changing + and the + backgrounds colour:
 	   Yeah no, still can't embed in applications aka share the font file... 
 	   I'll wait for a cease and desist.
  * [x] Comment the code for once
- * [ ] Revise instructions.inc
+ * [x] Revise instructions.inc
  * [ ] Move the plus/minus +/- signs in settings.inc around the option.
 	* Like this: - WIDTH + 
  * [x] Test if relative addresses work for github readme.md 
