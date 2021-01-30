@@ -29,7 +29,8 @@ SetVertical = [!WriteKeyValue Variables Vertical "0" "#@#settings.inc"][!WriteKe
 SetHorizontal = [!WriteKeyValue Variables Horizontal "0" "#@#settings.inc"][!WriteKeyValue Variables Vertical "1" "#@#settings.inc"][!WriteKeyValue Variables Height #Width# "#@#settings.inc"][!WriteKeyValue Variables Width #Height# "#@#settings.inc"]#Apply#
 
 ; Could probably use a better way of resetting than this.
-Reset = [!WriteKeyValue Variables Vertical "0" "#@#settings.inc"][!WriteKeyValue Variables CurrentTheme "Themes\Custom.inc" "#@#settings.inc"][!WriteKeyValue Variables Horizontal "1" "#@#settings.inc"][!WriteKeyValue Variables Height "40" "#@#settings.inc"][!WriteKeyValue Variables Width "40" "#@#settings.inc"][!WriteKeyValue Variables Unlock "0" "#@#settings.inc"][!WriteKeyValue Variables WidthIsLocked "1" "#@#settings.inc"][!WriteKeyValue Variables AutoScale "0" "#@#settings.inc"]#Apply#
+; Reset = [!WriteKeyValue Variables Vertical "0" "#@#settings.inc"][!WriteKeyValue Variables CurrentTheme "Themes\Custom.inc" "#@#settings.inc"][!WriteKeyValue Variables Horizontal "1" "#@#settings.inc"][!WriteKeyValue Variables Height "40" "#@#settings.inc"][!WriteKeyValue Variables Width "40" "#@#settings.inc"][!WriteKeyValue Variables Unlock "0" "#@#settings.inc"][!WriteKeyValue Variables WidthIsLocked "1" "#@#settings.inc"][!WriteKeyValue Variables AutoScale "0" "#@#settings.inc"]#Apply#
+Reset = [!CommandMeasure ResetScript Reset "SwatchBar\Settings" "setting.ini"]
 
 ; Theme bangs
 ApplyTheme1 = [!WriteKeyValue Variables CurrentTheme "Themes\Sushi.inc" "#@#settings.inc"]#Apply#

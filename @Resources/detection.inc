@@ -10,6 +10,7 @@ Maximized=0x20
 Measure=Calc
 Formula=1
 UpdateDivider=1
+Disabled=#IgnoreProgramDetection#
 OnUpdateAction=[!CommandMeasure MeasureWindow "Run"]
 
 [MeasureWindow]

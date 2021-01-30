@@ -33,7 +33,12 @@ Changing + and the + backgrounds colour:
 * Wait for a release
 
 # TO-DO
- * [x] Write a better readme.md
+ * [x] Move the plus/minus +/- signs in settings.inc around the option.
+	* Like this: - WIDTH + 
+ * [x] Make program detection easily toggleable from the settings.
+ * [ ] Turn alignment images into shapes.
+ * [x] Implement a better reset.
+ * [x] Write a better readme.md.
 	* [x] Like install instructions etc.
 	* [x] Maybe some usage instructions too ?
  * [x] Get rid of loader.ps1 & SwatchBar\Loader.ini
@@ -44,9 +49,5 @@ Changing + and the + backgrounds colour:
 	   I'll wait for a cease and desist.
  * [x] Comment the code for once
  * [x] Revise instructions.inc
- * [ ] Move the plus/minus +/- signs in settings.inc around the option.
-	* Like this: - WIDTH + 
  * [x] Test if relative addresses work for github readme.md 
 	* Hey it works :D
- * [x] Move alignment.inc MouseActions to bangs.inc
-    * Used a MeterStyle, they work better

@@ -2,7 +2,7 @@
 [Variables]
 
 ; Regular expression used for program detection
-TitleRegExp=.*Adobe.*
+TitleRegExp=.*adobe.*
 CosmeticName=Adobe
 
 ; SETTINGS UI COLOURS
@@ -12,6 +12,7 @@ SLIDER = ffd075
 LOCKBACK = ffbc45
 TEXTBACK = ffd075
 FontColor = ffffff
+FontColorRGB = 255,255,255
 GREEN = 9ab788
 SEMIGREEN = 64827d
 NEUTRAL = ccb1a6
@@ -21,6 +22,9 @@ RED = ea625c
 ; Overridden if AutoScale is true.
 Height=40
 Width=40
+
+; Program detection toggle
+IgnoreProgramDetection=1
 
 ; If true user has seen and dismissed instructions.
 InstructionsDismissed=1
