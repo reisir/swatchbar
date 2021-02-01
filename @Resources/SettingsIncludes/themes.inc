@@ -1,8 +1,10 @@
 [UserThemeBackground]
 Meter=Shape
-Shape=Rectangle 0,210,300,40 | Fill Color #NEUTRAL# | StrokeWidth 0 
+Shape=Rectangle 0,0,300,40 | Fill Color #NEUTRAL# | StrokeWidth 0 
 X=60
-Y=300
+Y=(300 + 210)
+ToolTipTitle=Themes
+ToolTipText=Change to user theme
 
 [Theme1BackgroundClickZone]
 Meter=Shape
@@ -10,27 +12,35 @@ Shape=Rectangle 0,0, 145, 200 | Fill Color 18213D | StrokeWidth 0
 X=60
 Y=300
 LeftMouseUpAction=#ApplyTheme1#
+ToolTipTitle=Themes
+ToolTipText=Change to Sceleri's Sushi
 
 [Theme1AdClickZone]
 Meter=Shape
-Shape=Rectangle 155,0, 145, 95 | Fill Color 18213D | StrokeWidth 0
-X=60
+Shape=Rectangle 0,0, 145, 95 | Fill Color 18213D | StrokeWidth 0
+X=(60 + 155)
 Y=300
 LeftMouseUpAction=["https://zeppe.li/latest"]
+ToolTipTitle=Sponsored
+ToolTipText=Sceleri's newest video
 
 [Theme2BackgroundClickZone]
 Meter=Shape
-Shape=Rectangle 310,0, 140, 200 | Fill Color 40769B | StrokeWidth 0
-X=60
+Shape=Rectangle 0,0, 140, 200 | Fill Color 40769B | StrokeWidth 0
+X=(60 + 310)
 Y=300
 LeftMouseUpAction=#ApplyTheme2#
+ToolTipTitle=Themes
+ToolTipText=Change to Cacto's Pastels
 
 [Theme2AdClickZone]
 Meter=Shape
-Shape=Rectangle 155,105, 145, 95 | Fill Color 40769B | StrokeWidth 0
-X=60
-Y=300
+Shape=Rectangle 0,0, 145, 95 | Fill Color 40769B | StrokeWidth 0
+X=(60 + 155)
+Y=(300 + 105)
 LeftMouseUpAction=["https://twitter.com/justcacto"]
+ToolTipTitle=Sponsored
+ToolTipText=Cacto's newest tweet
 
 [ScelerisSushi]
 Meter=String

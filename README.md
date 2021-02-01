@@ -33,10 +33,14 @@ Changing + and the + backgrounds colour:
 * Wait for a release
 
 # TO-DO
+ * [ ] Add translation support?
+ * [ ] Optimize #@#bangs.ini.
+ * [ ] Make an option to reset exluding themes.
+ * [ ] Remove "Apply" button since it's now redundant in all cases.
  * [x] Move the plus/minus +/- signs in settings.inc around the option.
 	* Like this: - WIDTH + 
  * [x] Make program detection easily toggleable from the settings.
- * [ ] Turn alignment images into shapes.
+ * [x] Turn alignment images into shapes.
  * [x] Implement a better reset.
  * [x] Write a better readme.md.
 	* [x] Like install instructions etc.

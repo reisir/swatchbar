@@ -23,11 +23,18 @@ RED = ea625c
 Height=40
 Width=40
 
+; If true, SwatchBar will scale to screen width or height.
+; (Depending on orientation)
+AutoScale=0
+
 ; Program detection toggle
 IgnoreProgramDetection=1
 
 ; If true user has seen and dismissed instructions.
 InstructionsDismissed=1
+
+; Tooltip toggle
+HideTooltips=0
 
 ; Unlock && !WidthIsLocked == width and height can be adjusted independently.
 ; Setting both to false or true will result in undocumented behaviour.
@@ -51,11 +58,7 @@ TotalWidth=720
 TotalHeight=40
 
 ; Deprecated. Hopefully.
-Refreshed=1
-
-; If true, SwatchBar will scale to screen width or height.
-; (Depending on orientation)
-AutoScale=0
+; Refreshed=1
 
 ; Current theme.
 CurrentTheme=Themes\Sushi.inc

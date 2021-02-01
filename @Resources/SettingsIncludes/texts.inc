@@ -16,6 +16,7 @@ MeterStyle=TextStyle
 StringAlign=Center
 X=500
 LeftMouseUpAction=#Close#
+ToolTipTitle=Close settings
 
 [InstructionsButton]
 Meter=String
@@ -24,10 +25,23 @@ MeterStyle=TextStyle
 StringAlign=Center
 X=460
 LeftMouseUpAction=#ShowInstructions#
+ToolTipTitle=Instructions
+ToolTipText=Show Instructions
 
-; AutoFillToggle and AutoTile use an epic hack called
-; a conditional, basically if the meter is not supposed
-; to be displayed it yeets itself outside of the skin.
+[TooltipToggle]
+Meter=String
+Text=[\xf27a]
+FontFace=FontAwesome
+FontColor=#FontColorRGB#,(#HideTooltips# = 1 ? 125 : 255)
+MeterStyle=TextStyle
+StringAlign=Center
+X=420
+Y=2.5
+DynamicVariables=1
+LeftMouseUpAction=[!WriteKeyValue Variables HideTooltips "(#HideTooltips# = 1 ? 0 : 1)" "#@#settings.inc"][!Refresh][!Refresh "SwatchBar" "swatchbar.ini"]
+ToolTipTitle=Tooltips
+ToolTipText=Toggle tooltips on/off
+
 [AutoFillToggle]
 Meter=String
 Text=Fill
@@ -38,6 +52,8 @@ X=(#AutoScale# = 1 ? 440 : 9999)
 W=140
 LeftMouseUpAction=#AutoFillOff#
 SolidColor=#TEXTBACK#
+ToolTipTitle=Tiling mode
+ToolTipText=Fill
 
 [AutoTile]
 Meter=String
@@ -49,14 +65,30 @@ Y=250
 W=140
 LeftMouseUpAction=#AutoFillOn#
 SolidColor=#TEXTBACK#
+ToolTipTitle=Tiling mode
+ToolTipText=Tile
 
 [WidthBackground]
 Meter=Shape
 Shape=Rectangle 0,0, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
-Shape2=Rectangle 0,50, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
-Shape3=Rectangle 0,100, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
-Shape4=Rectangle 0,150, 250, 40 | Fill Color #SEMIGREEN# | StrokeWidth 0
-Shape5=Rectangle 260,150, 40, 40 | Fill Color #NEUTRAL# | StrokeWidth 0
+X=60
+Y=100
+MouseScrollDownAction=#ScrollWidthDown#
+MouseScrollUpAction=#ScrollWidthUp#
+
+[HeightBackground]
+Meter=Shape
+Shape=Rectangle 0,0, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
+X=60
+Y=150
+MouseScrollDownAction=#ScrollHeightDown#
+MouseScrollUpAction=#ScrollHeightUp#
+
+[OtherBackgrounds]
+Meter=Shape
+Shape=Rectangle 0,100, 300, 40 | Fill Color #TEXTBACK# | StrokeWidth 0
+Shape2=Rectangle 0,150, 250, 40 | Fill Color #SEMIGREEN# | StrokeWidth 0
+Shape3=Rectangle 260,150, 40, 40 | Fill Color #NEUTRAL# | StrokeWidth 0
 X=60
 Y=100
 
@@ -64,10 +96,11 @@ Y=100
 Meter=String
 Text=Width
 MeterStyle=TextStyle
-; X=(210 - (([WidthAdjust:W] + [WidthPlus:W] + 5 + [WidthMinus:W] + 5) / 2))
 X=(210 - ([WidthAdjust:W] / 2))
 Y=100
 DynamicVariables=1
+ToolTipTitle=Size
+ToolTipText=Scroll to change width
 
 [WidthPlus]
 Meter=String
@@ -78,6 +111,8 @@ X=(210 + ([WidthAdjust:W] / 2))
 DynamicVariables=1
 Y=0r
 LeftMouseUpAction=#WidthPlusFive#
+ToolTipTitle=Size
+ToolTipText=Width +5
 
 [WidthMinus]
 Meter=String
@@ -89,15 +124,18 @@ X=(210 - ([WidthAdjust:W] / 2) - 27.5)
 DynamicVariables=1
 Y=0r
 LeftMouseUpAction=#WidthMinusFive#
+ToolTipTitle=Size
+ToolTipText=Width -5
 
 [HeightAdjust]
 Meter=String
 Text=Height
 MeterStyle=TextStyle
-;X=(210 - (([HeightAdjust:W] + [HeightPlus:W] + 5 + [HeightMinus:W] + 5) / 2))
 X=(210 - ([HeightAdjust:W] / 2))
 Y=150
 DynamicVariables=1
+ToolTipTitle=Size
+ToolTipText=Scroll to change height
 
 [HeightMinus]
 Meter=String
@@ -109,6 +147,8 @@ Y=0r
 Padding=0,2,2,0
 DynamicVariables=1
 LeftMouseUpAction=#HeightMinusFive#
+ToolTipTitle=Size
+ToolTipText=Height -5
 
 [HeightPlus]
 Meter=String
@@ -119,6 +159,8 @@ X=(210 + ([HeightAdjust:W] / 2))
 Y=0r
 DynamicVariables=1
 LeftMouseUpAction=#HeightPlusFive#
+ToolTipTitle=Size
+ToolTipText=Height +5
 
 [Vertical]
 Meter=String
@@ -130,6 +172,8 @@ StringAlign=Center
 LeftMouseUpAction=#SetVertical#
 Hidden=#Horizontal#
 SolidColor=#TEXTBACK#
+ToolTipTitle=Orientation
+ToolTipText=Vertical
 
 [Horizontal]
 Meter=String
@@ -141,6 +185,8 @@ StringAlign=Center
 LeftMouseUpAction=#SetHorizontal#
 Hidden=#Vertical#
 SolidColor=#TEXTBACK#
+ToolTipTitle=Orientation
+ToolTipText=Horizontal
 
 [ProgramDetectionRegex]
 Meter=String
@@ -152,6 +198,8 @@ StringAlign=Center
 LeftMouseUpAction=[!CommandMeasure "MeasureInput" "ExecuteBatch 1-2"]
 SolidColor=#SEMIGREEN#
 DynamicVariables=1
+ToolTipTitle=Program detection
+ToolTipText=Change regex pattern
 
 [MeasureInput]
 Measure=Plugin
@@ -170,12 +218,6 @@ DynamicVariables=1
 Command1=[!WriteKeyValue Variables TitleRegExp "$UserInput$" "#@#settings.inc"]
 Command2=[!Refresh "SwatchBar\Settings" "settings.ini"][!Refresh "SwatchBar" "swatchbar.ini"]
 
-; [ProgramDetectionFontColor]
-; Measure=Calc
-; IfCondition=#IgnoreProgramDetection# = 1
-; IfTrueAction=!SetOption DisableProgramDetection FontColor "#FontColor#77"
-; IfFalseAction=!SetOption DisableProgramDetection FontColor "#FontColor#"
-
 [DisableProgramDetection]
 Meter=String
 Text=[\xf05b]
@@ -187,6 +229,8 @@ X=340
 Y=255
 DynamicVariables=1
 LeftMouseUpAction=[!WriteKeyValue Variables IgnoreProgramDetection "(#IgnoreProgramDetection# = 1 ? 0 : 1)" "#@#settings.inc"]#Apply#
+ToolTipTitle=Program detection
+ToolTipText=Toggle program detection on/off
 
 [UnLockMeter]
 Meter=String
@@ -197,6 +241,8 @@ Text=[\xf023]
 X=17
 Y=55
 Hidden=#Unlock#
+ToolTipTitle=Width and height link
+ToolTipText=Linked
 
 [LockMeter]
 Meter=String
@@ -207,6 +253,8 @@ Text=[\xf09c]
 X=17
 Y=55
 Hidden=#WidthIsLocked#
+ToolTipTitle=Width and height link
+ToolTipText=Unlinked
 
 [WidthMeasure]
 Measure=String
@@ -242,8 +290,10 @@ LeftMouseUpAction=#Apply#
 StringAlign=Right
 X=510
 Y=510
-Padding=43,2,5,0
+Padding=5,2,5,0
 SolidColor=#GREEN#
+ToolTipTitle=Apply
+ToolTipText=Apply all changes and rebuild SwatchBar
 
 [Reset]
 Meter=String
@@ -260,3 +310,5 @@ H=
 ; H= is a functional piece of code.
 ; Without it the reset button is too tall.
 ; I don't know why.
+ToolTipTitle=Reset
+ToolTipText=Reset ALL settings and themes

@@ -16,6 +16,7 @@ function Reset {
     $RmAPI.Bang([string]::Format('!WriteKeyValue Variables Unlock "0" "{0}"', $settings) )
     $RmAPI.Bang([string]::Format('!WriteKeyValue Variables WidthIsLocked "1" "{0}"', $settings) )
     $RmAPI.Bang([string]::Format('!WriteKeyValue Variables AutoScale "0" "{0}"', $settings) )
+    $RmAPI.Bang([string]::Format('!WriteKeyValue Variables HideTooltips "0" "{0}"', $settings) )
     
     # Apply default themes
     $themes = $R + "Themes\"
@@ -26,22 +27,15 @@ function Reset {
     $pastels = $themes + "Pastels.inc"
     $sushi = $themes + "Sushi.inc"
 
-     $RmAPI.Log($custom_b +  "==>" +  $custom)
     Copy-Item "$($custom_b)" "$($custom)"
-     $RmAPI.Log($pastels_b + "==>" + $pastels)
     Copy-Item "$($pastels_b)" "$($pastels)"
-     $RmAPI.Log($sushi_b +  "==>" +  $sushi)
     Copy-Item "$($sushi_b)" "$($sushi)"
 
     # Load the construct script into current scope
-    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-    $construct = $R + "construct.ps1"
-    . "$($construct)"
+    # Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    # $construct = $R + "construct.ps1"
+    # . "$($construct)"
 
-    # Refresh and rebuild
-    $RmAPI.Bang('!Refresh') 
-    $RmAPI.Bang('!Refresh "SwatchBar" "swatchbar.ini"') 
-    Start-Sleep -milliseconds 10
-    Construct
+    $RmAPI.Bang('[!Refresh "SwatchBar\Settings" "settings.ini"][!Refresh "SwatchBar" "swatchbar.ini"][!Delay 0][!CommandMeasure "PSRM" "Construct" "SwatchBar" "swatchbar.ini"]') 
 
 }
