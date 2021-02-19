@@ -30,28 +30,21 @@ Changing + and the + backgrounds colour:
 ## Manual installation 
 
 * Download installer from [rainmeter.net](http://rainmeter.net) 
-* Wait for a release
+* Wait for a SwatchBar release 
 
 # TO-DO
  * [ ] Add translation support?
- * [ ] Optimize #@#bangs.ini.
  * [ ] Make an option to reset exluding themes.
- * [ ] Remove "Apply" button since it's now redundant in all cases.
+ * [x] Make swatchbar constantly align itself.
+   * [x] Make alignment toggleable.
+ * [x] Remove "Apply" button since it's now redundant in all cases.
+ * [x] Position the program detection InputText better.
  * [x] Move the plus/minus +/- signs in settings.inc around the option.
 	* Like this: - WIDTH + 
  * [x] Make program detection easily toggleable from the settings.
  * [x] Turn alignment images into shapes.
  * [x] Implement a better reset.
- * [x] Write a better readme.md.
-	* [x] Like install instructions etc.
-	* [x] Maybe some usage instructions too ?
  * [x] Get rid of loader.ps1 & SwatchBar\Loader.ini
  * [x] Move settings.ini inc files to @Resources
- * [x] Figure out if distributing Cubano is legal or not, its included in my
-	   Adobe subscription. "Includes usage in both personal and commercial projects"
-	   Yeah no, still can't embed in applications aka share the font file... 
-	   I'll wait for a cease and desist.
  * [x] Comment the code for once
  * [x] Revise instructions.inc
- * [x] Test if relative addresses work for github readme.md 
-	* Hey it works :D

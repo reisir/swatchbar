@@ -18,6 +18,17 @@ function Reset {
     $RmAPI.Bang([string]::Format('!WriteKeyValue Variables AutoScale "0" "{0}"', $settings) )
     $RmAPI.Bang([string]::Format('!WriteKeyValue Variables HideTooltips "0" "{0}"', $settings) )
     
+    Refresh
+
+}
+
+function ResetWithThemes {
+
+    $R = $RmAPI.VariableStr('@')
+    $settings = $R + 'settings.inc'
+
+    $RmAPI.Bang([string]::Format('!WriteKeyValue Variables CurrentTheme "Themes\Custom.inc" "{0}"', $settings) )
+
     # Apply default themes
     $themes = $R + "Themes\"
     $custom_b = $themes + "custom_backup.inc"
@@ -31,11 +42,10 @@ function Reset {
     Copy-Item "$($pastels_b)" "$($pastels)"
     Copy-Item "$($sushi_b)" "$($sushi)"
 
-    # Load the construct script into current scope
-    # Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-    # $construct = $R + "construct.ps1"
-    # . "$($construct)"
+    Refresh
 
+}
+
+function Refresh {
     $RmAPI.Bang('[!Refresh "SwatchBar\Settings" "settings.ini"][!Refresh "SwatchBar" "swatchbar.ini"][!Delay 0][!CommandMeasure "PSRM" "Construct" "SwatchBar" "swatchbar.ini"]') 
-
 }

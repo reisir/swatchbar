@@ -51,17 +51,20 @@ AlignVer=-1
 ; 1 = Top, 0 = Middle, -1 = Bottom
 AlignHor=0
 ; 1 = Right, 0 = Middle, -1 = Left
+AutoAlign=1
+; 1 = Automatically align SwatchBar whenever changes are made.
+; 0 = Don't.
 
 ; TotalWidth and -Height keep track of the total width and height
 ; of SwatchBar for alignment purposes.
-TotalWidth=720
+TotalWidth=360
 TotalHeight=40
 
 ; Deprecated. Hopefully.
 ; Refreshed=1
 
 ; Current theme.
-CurrentTheme=Themes\Sushi.inc
+CurrentTheme=Themes\Pastels.inc
 
 ; The scale of the Plus sign in %,
 ; you know, out of 100%

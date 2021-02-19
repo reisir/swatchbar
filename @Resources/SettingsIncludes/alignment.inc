@@ -1,5 +1,5 @@
 [Variables]
-AlignmentXOffset=(370 - (#AlignmentTotal# - 140) / 2)
+AlignmentXOffset=(340 - (#AlignmentTotal# - 140) / 2)
 AlignmentYOffset=(100 - (#AlignmentTotal# - 140) / 2)
 AlignmentPadding=5
 AlignmentTotal=120
@@ -14,9 +14,9 @@ AlignmentRow3=   (#AlignmentYOffset# + (#AlignmentBlock# * 2) + (#AlignmentPaddi
 
 [Alignment]
 Meter=Shape
-Shape=Rectangle 370,100,140,140 | Fill Color #NEUTRAL# | StrokeWidth 0
+Shape=Rectangle 340,100,140,140 | Fill Color #NEUTRAL# | StrokeWidth 0
 
-[Conditions]
+[SetSelected]
 Measure=Calc
 Formula=0
 IfCondition= (#AlignVer# = 1 ) && (#AlignHor# = 1 )
@@ -62,7 +62,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 0
 x=#AlignmentColumn1#
 y=#AlignmentRow1#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Move "0" "0" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Refresh]
 ToolTipText=Top-Left
 
 [TopMiddleShape]
@@ -71,7 +71,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 45
 x=#AlignmentColumn2#
 y=#AlignmentRow1#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Move "((#SCREENAREAWIDTH# / 2) - (#TotalWidth# / 2))" "0" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Refresh]
 ToolTipText=Top-Center
 
 [TopRightShape]
@@ -80,7 +80,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 90
 x=#AlignmentColumn3#
 y=#AlignmentRow1#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "0" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Refresh]
 ToolTipText=Top-Right
 
 [MiddleRightShape]
@@ -89,7 +89,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 135
 x=#AlignmentColumn3#
 y=#AlignmentRow2#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "((#SCREENAREAHEIGHT# / 2) - (#TotalHeight# / 2))" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Refresh]
 ToolTipText=Middle-Right
 
 [BottomRightShape]
@@ -98,7 +98,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 180
 x=#AlignmentColumn3#
 y=#AlignmentRow3#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "(#SCREENAREAHEIGHT# - #Height#)" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Refresh]
 ToolTipText=Bottom-Right
 
 [BottomMiddleShape]
@@ -107,7 +107,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 225
 x=#AlignmentColumn2#
 y=#AlignmentRow3#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Move "((#SCREENAREAWIDTH# / 2) - (#TotalWidth# / 2))" "(#SCREENAREAHEIGHT# - #Height#)" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Refresh]
 ToolTipText=Bottom-Center
 
 [BottomLeftShape]
@@ -116,7 +116,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 270
 x=#AlignmentColumn1#
 y=#AlignmentRow3#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Move "0" "(#SCREENAREAHEIGHT# - #TotalHeight#)" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Refresh]
 ToolTipText=Bottom-Left
 
 [MiddleLeftShape]
@@ -125,7 +125,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 315
 x=#AlignmentColumn1#
 y=#AlignmentRow2#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Move "0" "((#SCREENAREAHEIGHT# / 2) - (#TotalHeight# / 2))" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Refresh]
 ToolTipText=Middle-Left
 
 [MiddleMiddleShape]
@@ -135,5 +135,5 @@ Shape=Rectangle 0,0,#AlignmentItem#,#AlignmentItem# | StrokeWidth 0 | Fill Color
 Overrides=Rotate 0
 x=#AlignmentColumn2#
 y=#AlignmentRow2#
-LeftMouseUpAction=[!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Move "((#SCREENAREAWIDTH# / 2) - (#TotalWidth# / 2))" "((#SCREENAREAHEIGHT# / 2) - (#TotalHeight# / 2))" SwatchBar][!Refresh]
+LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Refresh]
 ToolTipText=Middle-Center

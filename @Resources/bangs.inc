@@ -40,6 +40,10 @@ SetHorizontal = [!WriteKeyValue Variables Horizontal "0" "#@#settings.inc"][!Wri
 
 ; Run reset script
 Reset = [!CommandMeasure ResetScript Reset "SwatchBar\Settings" "settings.ini"]
+ResetWithThemes = [!CommandMeasure ResetScript ResetWithThemes "SwatchBar\Settings" "settings.ini"]
+
+; Toggle AutoAlignment
+ToggleAutoAlignment=[!WriteKeyValue Variables AutoAlign "(1 - #AutoAlign#)" "#@#settings.inc"][!Refresh "SwatchBar\Settings"][!Refresh "SwatchBar"]
 
 ; Theme bangs
 ApplyTheme1 = [!WriteKeyValue Variables CurrentTheme "Themes\Sushi.inc" "#@#settings.inc"]#Apply#
