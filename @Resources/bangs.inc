@@ -40,7 +40,7 @@ SetHorizontal = [!WriteKeyValue Variables Horizontal "0" "#@#settings.inc"][!Wri
 
 ; Run reset script
 Reset = [!CommandMeasure ResetScript Reset "SwatchBar\Settings" "settings.ini"]
-ResetWithThemes = [!CommandMeasure ResetScript ResetWithThemes "SwatchBar\Settings" "settings.ini"]
+ResetThemes = [!CommandMeasure ResetScript ResetThemes "SwatchBar\Settings" "settings.ini"]
 
 ; Toggle AutoAlignment
 ToggleAutoAlignment=[!WriteKeyValue Variables AutoAlign "(1 - #AutoAlign#)" "#@#settings.inc"][!Refresh "SwatchBar\Settings"][!Refresh "SwatchBar"]
@@ -49,3 +49,25 @@ ToggleAutoAlignment=[!WriteKeyValue Variables AutoAlign "(1 - #AutoAlign#)" "#@#
 ApplyTheme1 = [!WriteKeyValue Variables CurrentTheme "Themes\Sushi.inc" "#@#settings.inc"]#Apply#
 ApplyTheme2 = [!WriteKeyValue Variables CurrentTheme "Themes\Pastels.inc" "#@#settings.inc"]#Apply#
 ApplyCustomTheme = [!WriteKeyValue Variables CurrentTheme "Themes\Custom.inc" "#@#settings.inc"]#Apply#
+
+; Alignment bangs
+WriteMiddleCenter = [!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"]
+WriteMiddleLeft = [!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"]
+WriteBottomLeft = [!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"]
+WriteBottomMiddle = [!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"]
+WriteBottomRight = [!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"]
+WriteMiddleRight = [!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"]
+WriteTopRight = [!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"]
+WriteTopMiddle = [!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"]
+WriteTopLeft = [!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"]
+
+; Move bangs
+MoveTopRight = [!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "0" SwatchBar]
+MoveTopMiddle = [!Move "((#SCREENAREAWIDTH# / 2) - (#TotalWidth# / 2))" "0" SwatchBar]
+MoveTopLeft = [!Move "0" "0" SwatchBar]
+MoveMiddleLeft = [!Move "0" "((#SCREENAREAHEIGHT# / 2) - (#TotalHeight# / 2))" SwatchBar]
+MoveBottomLeft = [!Move "0" "(#SCREENAREAHEIGHT# - #TotalHeight#)" SwatchBar]
+MoveBottomMiddle = [!Move "((#SCREENAREAWIDTH# / 2) - (#TotalWidth# / 2))" "(#SCREENAREAHEIGHT# - #Height#)" SwatchBar]
+MoveBottomRight = [!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "(#SCREENAREAHEIGHT# - #Height#)" SwatchBar]
+MoveMiddleRight = [!Move "(#SCREENAREAWIDTH# - #TotalWidth#)" "((#SCREENAREAHEIGHT# / 2) - (#TotalHeight# / 2))" SwatchBar]
+MoveMiddleCenter = [!Move "((#SCREENAREAWIDTH# / 2) - (#TotalWidth# / 2))" "((#SCREENAREAHEIGHT# / 2) - (#TotalHeight# / 2))" SwatchBar]

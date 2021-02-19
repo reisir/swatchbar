@@ -46,12 +46,12 @@ ToolTipText=Toggle tooltips on/off
 
 [UnLockMeter]
 Meter=Shape
-Shape=Path ChainPart | Offset 7.5,7.5 | Extend Attributes
-Shape2=Path ChainPart | Rotate 180 | Offset 7.5,50 | Extend Attributes
-Shape3=Line 12.5,15,12.5,60 | Offset 7.5,7.5 | Extend Attributes
+Shape=Rectangle 0,0,40,90 | Fill Color #SLIDERBACK# | StrokeWidth 0 | Stroke Color 0,0,0,0
+Shape2=Path ChainPart | Offset 7.5,7.5 | Extend Attributes
+Shape3=Path ChainPart | Rotate 180 | Offset 7.5,50 | Extend Attributes
+Shape4=Line 12.5,15,12.5,60 | Offset 7.5,7.5 | Extend Attributes
 ChainPart=5,30 | LineTo 5,10 | ArcTo 10,5,5,5 | LineTo 15,5 | ArcTo 20,10,5,5 | LineTo 20,30 
 Attributes=StrokeWidth 4 | Stroke Color #FontColor# | StrokeStartCap Round | StrokeEndCap Round
-SolidColor=#SLIDERBACK#
 LeftMouseUpAction=#UnlockHeightWidth#
 X=40
 Y=100
@@ -63,8 +63,9 @@ ToolTipText=Linked
 
 [LockMeter]
 Meter=Shape
-Shape=Path ChainPart | Offset 7.5,7.5 | Extend Attributes
-Shape2=Path ChainPart | Rotate 180 | Offset 7.5,50 | Extend Attributes
+Shape=Rectangle 0,0,40,90 | Fill Color #SLIDERBACK# | StrokeWidth 0 | Stroke Color 0,0,0,0
+Shape2=Path ChainPart | Offset 7.5,7.5 | Extend Attributes
+Shape3=Path ChainPart | Rotate 180 | Offset 7.5,50 | Extend Attributes
 ChainPart=5,30 | LineTo 5,10 | ArcTo 10,5,5,5 | LineTo 15,5 | ArcTo 20,10,5,5 | LineTo 20,30 
 Attributes=StrokeWidth 4 | Stroke Color #FontColor# | StrokeStartCap Round | StrokeEndCap Round
 SolidColor=#SLIDERBACK#
@@ -293,20 +294,6 @@ ToolTipTitle=Alignment
 ToolTipText=Manually position SwatchBar.
 LeftMouseUpAction=#ToggleAutoAlignment#
 
-; Redundant apply button. Each option now applies when changed automatically.
-; [Apply]
-; Meter=String
-; Text=Apply!
-; MeterStyle=TextStyle
-; LeftMouseUpAction=#Apply#
-; StringAlign=Right
-; X=510
-; Y=510
-; Padding=5,2,5,0
-; SolidColor=#GREEN#
-; ToolTipTitle=Apply
-; ToolTipText=Apply all changes and rebuild SwatchBar
-
 [Reset]
 Meter=String
 Text=Reset
@@ -316,6 +303,7 @@ X=410
 Y=500
 W=140
 SolidColor=#RED#
-LeftMouseUpAction=#ResetWithThemes#
+LeftMouseUpAction=#ResetThemes#
+MiddleMouseUpAction=#Reset#
 ToolTipTitle=Reset
-ToolTipText=Resets all themes.
+ToolTipText=Left-Click: Resets all themes.#CRLF#Middle-Click: Reset all settings.

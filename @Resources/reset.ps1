@@ -17,12 +17,13 @@ function Reset {
     $RmAPI.Bang([string]::Format('!WriteKeyValue Variables WidthIsLocked "1" "{0}"', $settings) )
     $RmAPI.Bang([string]::Format('!WriteKeyValue Variables AutoScale "0" "{0}"', $settings) )
     $RmAPI.Bang([string]::Format('!WriteKeyValue Variables HideTooltips "0" "{0}"', $settings) )
+    $RmAPI.Bang([string]::Format('!WriteKeyValue Variables AutoAlign "1" "{0}"', $settings) )
     
     Refresh
 
 }
 
-function ResetWithThemes {
+function ResetThemes {
 
     $R = $RmAPI.VariableStr('@')
     $settings = $R + 'settings.inc'

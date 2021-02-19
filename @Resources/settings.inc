@@ -1,5 +1,6 @@
-; Use the settings skin to change settings thanks :)
 [Variables]
+
+; To change settings, couble click the +.
 
 ; Regular expression used for program detection
 TitleRegExp=.*adobe.*
@@ -55,16 +56,13 @@ AutoAlign=1
 ; 1 = Automatically align SwatchBar whenever changes are made.
 ; 0 = Don't.
 
-; TotalWidth and -Height keep track of the total width and height
-; of SwatchBar for alignment purposes.
-TotalWidth=360
+; TotalWidth and TotalHeight keep track of the total width and
+; height of SwatchBar for alignment purposes.
+TotalWidth=280
 TotalHeight=40
 
-; Deprecated. Hopefully.
-; Refreshed=1
-
 ; Current theme.
-CurrentTheme=Themes\Pastels.inc
+CurrentTheme=Themes\Custom.inc
 
 ; The scale of the Plus sign in %,
 ; you know, out of 100%

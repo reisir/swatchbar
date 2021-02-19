@@ -1,11 +1,13 @@
 # SwatchBar
 SwatchBar Rainmeter skin. Displays colour swatches in your taskbar, for easy cross application use.
 
-Cacto's pastel theme by @ JustCacto
+Cacto's pastel theme by [@JustCacto](https://twitter.com/JustCacto)
 
 ![SwatchBar Screenshot](./@Resources/Images/swatchbar.png)
 
 # Usage
+
+## Double click the + to open settings!
 
 Swatch controls: 
  * Left-Click to copy the colour HEX to your clipboard.
@@ -15,7 +17,7 @@ Swatch controls:
 Adding a swatch: 
  * Left-Click on + to add a swatch from the clipboard.
 
-Changing + and the + backgrounds colour:
+Changing + and the + background colour:
  * Right-Click the + to change the + colour.
  * Middle-Click the + to change the background colour.
 
@@ -26,15 +28,16 @@ Changing + and the + backgrounds colour:
 	choco install rainmeter -y
 	cd $USERPROFILE/Documents/Rainmeter/skins
 	git clone https://github.com/sceleri/swatchbar.git
-	
+
 ## Manual installation 
 
-* Download installer from [rainmeter.net](http://rainmeter.net) 
-* Wait for a SwatchBar release 
+* Download installer from [rainmeter.net](https://rainmeter.net) 
+* Download the newest .rmskin from [releases](https://github.com/sceleri/swatchbar/releases)
 
 # TO-DO
- * [ ] Add translation support?
- * [ ] Make an option to reset exluding themes.
+ * [x] Add translation support?
+   * Impossible due to the settings skin layout
+ * [x] Make an option to reset exluding themes.
  * [x] Make swatchbar constantly align itself.
    * [x] Make alignment toggleable.
  * [x] Remove "Apply" button since it's now redundant in all cases.

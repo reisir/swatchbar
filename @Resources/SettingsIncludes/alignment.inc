@@ -19,15 +19,15 @@ Shape=Rectangle 340,100,140,140 | Fill Color #NEUTRAL# | StrokeWidth 0
 [SetSelected]
 Measure=Calc
 Formula=0
-IfCondition= (#AlignVer# = 1 ) && (#AlignHor# = 1 )
-IfCondition2=(#AlignVer# = 1 ) && (#AlignHor# = 0 )
-IfCondition3=(#AlignVer# = 1 ) && (#AlignHor# = -1)
-IfCondition4=(#AlignVer# = 0 ) && (#AlignHor# = -1)
-IfCondition5=(#AlignVer# = -1) && (#AlignHor# = -1)
-IfCondition6=(#AlignVer# = -1) && (#AlignHor# = 0 )
-IfCondition7=(#AlignVer# = -1) && (#AlignHor# = 1 )
-IfCondition8=(#AlignVer# = 0 ) && (#AlignHor# = 1 )
-IfCondition9=(#AlignVer# = 0 ) && (#AlignHor# = 0 )
+IfCondition= (#AlignVer# = 1 ) && (#AlignHor# = 1 ) && (#AutoAlign# = 1)
+IfCondition2=(#AlignVer# = 1 ) && (#AlignHor# = 0 ) && (#AutoAlign# = 1)
+IfCondition3=(#AlignVer# = 1 ) && (#AlignHor# = -1) && (#AutoAlign# = 1)
+IfCondition4=(#AlignVer# = 0 ) && (#AlignHor# = -1) && (#AutoAlign# = 1)
+IfCondition5=(#AlignVer# = -1) && (#AlignHor# = -1) && (#AutoAlign# = 1)
+IfCondition6=(#AlignVer# = -1) && (#AlignHor# = 0 ) && (#AutoAlign# = 1)
+IfCondition7=(#AlignVer# = -1) && (#AlignHor# = 1 ) && (#AutoAlign# = 1)
+IfCondition8=(#AlignVer# = 0 ) && (#AlignHor# = 1 ) && (#AutoAlign# = 1)
+IfCondition9=(#AlignVer# = 0 ) && (#AlignHor# = 0 ) && (#AutoAlign# = 1)
 IfTrueAction= [!SetOption TopRightShape     MeterStyle "ShapeStyle | MouseActions | Selected"][!UpdateMeter TopRightShape]     [!Redraw]
 IfTrueAction2=[!SetOption TopMiddleShape    MeterStyle "ShapeStyle | MouseActions | Selected"][!UpdateMeter TopMiddleShape]    [!Redraw]
 IfTrueAction3=[!SetOption TopLeftShape      MeterStyle "ShapeStyle | MouseActions | Selected"][!UpdateMeter TopLeftShape]      [!Redraw]
@@ -48,7 +48,7 @@ Color=Fill Color #SLIDERBACK# | Stroke Color #SLIDERBACK#
 
 [MouseActions]
 MouseOverAction=[!SetOption #CURRENTSECTION# MeterStyle "ShapeStyle | MouseActions | Hover"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# MeterStyle "ShapeStyle | MouseActions"][!UpdateMeasure Conditions][!Delay 0][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# MeterStyle "ShapeStyle | MouseActions"][!UpdateMeasure SetSelected][!Delay 0][!UpdateMeter #CURRENTSECTION#][!Redraw]
 LeftMouseDownAction=[!SetOption #CURRENTSECTION# MeterStyle "ShapeStyle | MouseActions | Selected"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 ToolTipTitle=Alignment
 
@@ -62,7 +62,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 0
 x=#AlignmentColumn1#
 y=#AlignmentRow1#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteTopLeft##MoveTopLeft#[!Refresh]
 ToolTipText=Top-Left
 
 [TopMiddleShape]
@@ -71,7 +71,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 45
 x=#AlignmentColumn2#
 y=#AlignmentRow1#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteTopMiddle##MoveTopMiddle#[!Refresh]
 ToolTipText=Top-Center
 
 [TopRightShape]
@@ -80,7 +80,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 90
 x=#AlignmentColumn3#
 y=#AlignmentRow1#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 1 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteTopRight##MoveTopRight#[!Refresh]
 ToolTipText=Top-Right
 
 [MiddleRightShape]
@@ -89,7 +89,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 135
 x=#AlignmentColumn3#
 y=#AlignmentRow2#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteMiddleRight##MoveMiddleRight#[!Refresh]
 ToolTipText=Middle-Right
 
 [BottomRightShape]
@@ -98,7 +98,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 180
 x=#AlignmentColumn3#
 y=#AlignmentRow3#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteBottomRight##MoveBottomRight#[!Refresh]
 ToolTipText=Bottom-Right
 
 [BottomMiddleShape]
@@ -107,7 +107,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 225
 x=#AlignmentColumn2#
 y=#AlignmentRow3#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteBottomMiddle##MoveBottomMiddle#[!Refresh]
 ToolTipText=Bottom-Center
 
 [BottomLeftShape]
@@ -116,7 +116,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 270
 x=#AlignmentColumn1#
 y=#AlignmentRow3#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer -1 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteBottomLeft##MoveBottomLeft#[!Refresh]
 ToolTipText=Bottom-Left
 
 [MiddleLeftShape]
@@ -125,7 +125,7 @@ MeterStyle=ShapeStyle | MouseActions
 Overrides=Rotate 315
 x=#AlignmentColumn1#
 y=#AlignmentRow2#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor -1 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteMiddleLeft##MoveMiddleLeft#[!Refresh]
 ToolTipText=Middle-Left
 
 [MiddleMiddleShape]
@@ -135,5 +135,5 @@ Shape=Rectangle 0,0,#AlignmentItem#,#AlignmentItem# | StrokeWidth 0 | Fill Color
 Overrides=Rotate 0
 x=#AlignmentColumn2#
 y=#AlignmentRow2#
-LeftMouseUpAction=[!UpdateMeasure "Aligner" "SwatchBar"][!WriteKeyValue Variables AlignHor 0 "#@#settings.inc"][!WriteKeyValue Variables AlignVer 0 "#@#settings.inc"][!Refresh]
+LeftMouseUpAction=#WriteMiddleCenter##MoveMiddleCenter#[!Refresh]
 ToolTipText=Middle-Center
