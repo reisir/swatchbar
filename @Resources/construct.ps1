@@ -2,6 +2,7 @@
 function Update {
 
 }
+
 function Construct {
 
 $RmAPI.Log('Constructing swatches.inc')
