@@ -9,6 +9,8 @@ Cacto's pastel theme by [@JustCacto](https://twitter.com/JustCacto)
 
 ## Double click the + to open settings!
 
+This will also paste in any color code you happen to have in your clipboard. Just delete it or don't have color codes in your clipboard.
+
 Swatch controls: 
  * Left-Click to copy the colour HEX to your clipboard.
  * Right-Click a swatch to make it the colour in your clipboard.
@@ -35,19 +37,5 @@ Changing + and the + background colour:
 * Download the newest .rmskin from [releases](https://github.com/sceleri/swatchbar/releases)
 
 # TO-DO
- * [x] Add translation support?
-   * Impossible due to the settings skin layout
- * [x] Make an option to reset exluding themes.
- * [x] Make swatchbar constantly align itself.
-   * [x] Make alignment toggleable.
- * [x] Remove "Apply" button since it's now redundant in all cases.
- * [x] Position the program detection InputText better.
- * [x] Move the plus/minus +/- signs in settings.inc around the option.
-	* Like this: - WIDTH + 
- * [x] Make program detection easily toggleable from the settings.
- * [x] Turn alignment images into shapes.
- * [x] Implement a better reset.
- * [x] Get rid of loader.ps1 & SwatchBar\Loader.ini
- * [x] Move settings.ini inc files to @Resources
- * [x] Comment the code for once
- * [x] Revise instructions.inc
+ * [ ] Add an option to swap the `+` to the end of the bar
+ 	* This will most likely require a large redo of the entire skin so don't expect it anytime soon Cacto
